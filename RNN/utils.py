@@ -84,17 +84,19 @@ def random_training_example(category_lines, all_categories):
 
 
 if __name__ == "__main__":
-    print("ALL_LETTERS:", ALL_LETTERS)
-    print("Number of letters:", len(ALL_LETTERS))
+    # print("ALL_LETTERS:", ALL_LETTERS)
+    # print("Number of letters:", len(ALL_LETTERS))
 
-    print(f'name: "Ślusàrski"')
-    print(f'name in ascii: {unicode_to_ascii("Ślusàrski")}')
+    # print(f'name: "Ślusàrski"')
+    # print(f'name in ascii: {unicode_to_ascii("Ślusàrski")}')
 
-    print(letter_to_tensor("J"))
-    print(line_to_tensor("Jones"))
+    print(letter_to_tensor("b"))
+    print(line_to_tensor("abc"))
 
-    category_lines, all_categories = load_data()
-    print(all_categories)
-    print(category_lines['Italian'][:5])
+    # category_lines, all_categories = load_data()
+    # print(all_categories)
+    # print(category_lines['Italian'][:5])
+
+
 
 

@@ -25,6 +25,7 @@ def train(line_tensor, category_tensor):
     optimizer.step()
     return output, loss.item()
 
+
 def predict(rnn, input_line):
     print(f'\n> {input_line}')
     with torch.no_grad():
@@ -45,9 +46,9 @@ if __name__ == "__main__":
 
     current_loss = 0
     all_losses = []
-    plot_steps, print_steps = 1000, 5_000
+    plot_steps, print_steps = 5000, 25_000
 
-    n_iters = 100_000
+    n_iters = 500_000
     print("started training")
     for i in range(n_iters):
         category, line, category_tensor, line_tensor = random_training_example(category_lines, all_categories)
@@ -63,8 +64,8 @@ if __name__ == "__main__":
             print(f'{i+1} {int((i+1)/n_iters * 100)} {loss:.3f} {line} | {guess} {correct}')
 
     print('Finished Training')
-    model_name = 'rnn_name.pth'
-    PATH_name = f'/Users/tamiroffen/Documents/nlp/RNN/saved_models/{model_name}'
+    model_name = 'rnn_relu.pth'
+    PATH_name = f'saved_models/{model_name}'
     torch.save(rnn.state_dict(), PATH_name)
     print(f'Saved model to {PATH_name}')
 
