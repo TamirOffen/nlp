@@ -11,13 +11,13 @@ RNNs are a class of neural networks that allow previous outputs to be used as in
 Notice how RNNs allow us to operate over sequences of vectors.
 
 $$
-\begin{align*}
-h_{t} &\leftarrow \underbrace{\phi}_{\text{non-linearity}}(\underbrace{V \times h_{t-1}}_{\text{prev hidden state}} + \underbrace{U \times x_t}_{\text{current input}}) \\
-o_t &\leftarrow W \times h_t
-\end{align*}
+h_{t} \leftarrow \underbrace{\phi}_{\text{non-linearity}}(\underbrace{V \times h_{t-1}}_{\text{prev hidden state}} + \underbrace{U \times x_t}_{\text{current input}}) \\
+o_t \leftarrow W \times h_t
 $$
 
-$\sqrt{3x-1}+(1+x)^2$
+$h_t \leftarrow \underbrace{\phi}_{\text{non-linearity}}(\underbrace{V \times h_{t-1}}_{\text{prev hidden state}} + \underbrace{U \times x_t}_{\text{current input}})$
+
+$o_t \leftarrow W \times h_t$
 
 RNN API:
 ```python
