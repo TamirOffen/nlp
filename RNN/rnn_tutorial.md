@@ -17,6 +17,7 @@ o_t &\leftarrow W \times h_t
 \end{align*}
 $$
 
+$\sqrt{3x-1}+(1+x)^2$
 
 RNN API:
 ```python
