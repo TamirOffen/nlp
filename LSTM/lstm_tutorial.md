@@ -21,13 +21,20 @@ From the diagram we can see that information can just *flow* through the cell st
 
 **Steps of LSTM:**
 
-1. Forget Gate: decides what information we'll through away from the cell state. This layer looks at $h_{t-1}$ and $x_t$, outputs a number between 0 and 1, where a 1 represents "completely keep the cell state", and a 0 represents "completely remove/zero out this cell state".
+- Forget Gate: decides what information we'll through away from the cell state. This layer looks at $h_{t-1}$ and $x_t$, outputs a number between 0 and 1, where a 1 represents "completely keep the cell state", and a 0 represents "completely remove/zero out this cell state".
+   
 ![](imgs/forget_gate.png)
-2. Input Gate: first part of the new info that will be added to the cell state. The sigmoid layer decides which values we'll update. The tanh layer creates a new vector of candidate values $\widetilde{C}_t$ that could be added to the state.
+
+- Input Gate: first part of the new info that will be added to the cell state. The sigmoid layer decides which values we'll update. The tanh layer creates a new vector of candidate values $\widetilde{C}_t$ that could be added to the state.
+   
 ![](imgs/input_gate.png)
-3. Update of cell state: we multiply the old state $C_{t-1}$ by $f_t$, forgetting the things the lstm wanted to forget. Then, we add $i_t * \widetilde{C}_t$, the candidate values scaled by how much the lstm decided to update each state value.
+
+- Update of cell state: we multiply the old state $C_{t-1}$ by $f_t$, forgetting the things the lstm wanted to forget. Then, we add $i_t * \widetilde{C}_t$, the candidate values scaled by how much the lstm decided to update each state value.
+  
 ![](imgs/cell_update.png)
-4. Output: the output is based on the updated cell state. First, the sigmoid layer will decide what parts of the cell state the lstm is going to output. The lstm then multiplies the output of the sigmoid gate with the cell state through a tanh.
+
+- Output: the output is based on the updated cell state. First, the sigmoid layer will decide what parts of the cell state the lstm is going to output. The lstm then multiplies the output of the sigmoid gate with the cell state through a tanh.
+  
 ![](imgs/output.png)
 
 **Example run of a LSTM based language model**:
