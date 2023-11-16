@@ -50,3 +50,5 @@ This language model will try to predict the next word depending on all of the pr
 
 ## Project: Time Sequence Prediction Using an LSTM
 https://youtu.be/AvKSPZ7oyVg?si=-A9FnjgQWoGCOzHD
+
+sequence to sequence model.
